@@ -11,9 +11,9 @@ from flask_app.models.user_Model import User
 def index():
     return render_template("index.html")
 
-# # 01 ROUTES | DASHBOARD 
-# @app.route("/dashboard")
-# def dashboard():
+# 01 ROUTES | DASHBOARD 
+@app.route("/dashboard")
+def dashboard():
 #     if "user_id" not in session:
 #         return redirect("/logout")
 #     data = {
@@ -21,7 +21,7 @@ def index():
 #     }
 
 #     print("I got my 03 LIST of", data)
-
+    return render_template("home.html")
 #     return render_template("home.html", user=User.get_by_id(data))
 
 # ######## GET ROUTES ########

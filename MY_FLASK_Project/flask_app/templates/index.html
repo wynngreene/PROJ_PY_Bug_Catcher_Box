@@ -1,24 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
-        </nav>
-    </header>
-    <main>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <title>Document</title>
+    </head>
+    
+    <body class="my-bg-color">
+        <header>
+            <nav>
+                {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+            </nav>
+        </header>
 
-    </main>
-    <footer>
+        <main class="container">
+            <br>
+            <h2>RECIPE SHARE</h2>
+            <br>
+            <div class="justify-content-center row">
+                <div class="col-sm-4 card text-white bg-dark" style="margin-right: 3em;">
+                    <form action="/register" method="post" class="card-body">
+                        <h4 class="card-header">Register</h4>
+                        {% with messages = get_flashed_messages(category_filter=["register"]) %}    
+                            {% if messages %}
+                            <div class="alert alert-danger">
+                                <strong>Danger!</strong> 
+                            {% for message in messages %}  
+                            <p>{{message}}</p>
+                            {% endfor %}
+                            </div>
+                            {% endif %}
+                        {% endwith %}
+                        <div class="form-group">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" name="first_name" class="form-control" >
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" name="last_name" class="form-control" >
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" class="form-control" >
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="text" name="password" class="form-control" >
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm">Confirm Password:</label>
+                            <input type="text" name="confirm" class="form-control">
+                            <br>
+                        </div>
+                        <input type="submit" class="btn btn-warning btn-lg" value="Register">
+                    </form>
+                </div>
+                
+                <div class="col-sm-4 card text-white bg-dark">
+                    <form action="/login" method="post" class="card-body">
+                        <h4 class="card-header">Login</h4>
+                        {% with messages = get_flashed_messages(category_filter=["login"]) %}
+                            {% if messages %}
+                            <div class="alert alert-danger">
+                                <strong>NEWS Flash!</strong>
+                                {% for message in messages %}
+                                <p>{{message}}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        {% endwith %}
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="text" name="email" class="form-control">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Password:</label>
+                            <input type="password" name="password" class="form-control">
+                            <br>
+                        </div>
+                        <input type="submit" class="btn btn-warning btn-lg" value="Login">
+                    </form>
+                </div>
+            </div>
+        </main>
 
-    </footer>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
-</body>
+        <footer>
+            {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+        </footer>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
 </html>
