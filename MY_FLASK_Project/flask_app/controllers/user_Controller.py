@@ -24,16 +24,16 @@ def dashboard():
     return render_template("home.html")
 #     return render_template("home.html", user=User.get_by_id(data))
 
-# ######## GET ROUTES ########
+######## GET ROUTES ########
 
 
-# # 00 ROUTES | LOGOUT
-# @app.route("/logout")
-# def logout():
-#     session.clear()
+# 00 ROUTES | LOGOUT
+@app.route("/logout")
+def logout():
+    session.clear()
 
-#     print("Session CLEARED!")
-#     return redirect("/")
+    print("Session CLEARED!")
+    return redirect("/")
 
 
 # ######## POST ROUTES ########
