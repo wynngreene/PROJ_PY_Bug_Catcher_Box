@@ -18,13 +18,18 @@
         </header>
 
     <main class="container">
+        <br>
+        <h2>
+            Welcome {{user.first_name}} {{user.last_name}}
+        </h2>
+        <br>
         <div class="gallery">
         </div>
-
-        <!-- <div class="card bg-dark">
+        <br>
+        <div class="card bg-dark">
             <div class="card-header text-white d-flex justify-content-between">
-                <h4>All Posted Recipes</h4>
-                <a href="/recipes/new" class="btn btn-warning">(+) Create New</a> 
+                <h4>All Posts</h4>
+                <a href="/posts/new" class="btn btn-warning">(+) Create New</a> 
             </div>
             <table class="table card-body table-striped table-hover">
                 <tr>
@@ -33,24 +38,24 @@
                     <th>POSTED BY</th>
                     <th>ACTIONS</th>
                 </tr>
-                {% for recipe in recipes %}
+                {% for post in posts %}
                 <tr>
                 
-                    <td>{{recipe.name}} <span class="badge badge-primary text-primary">New</span></td>
+                    <td>{{post.name}} <span class="badge badge-primary text-primary">New</span></td>
                     <td>
-                        {% if recipe.under_30: %}
+                        {% if post.under_30: %}
                         Yes
                         {% else %}
                         No
                         {% endif %}
                     </td>
-                    <td>{{recipe.user.first_name}}</td>
+                    <td>{{post.user.first_name}}</td>
                     <td>
-                        <a href="/recipes/{{recipe.id}}">View Recipe</a> |
+                        <a href="/posts/{{post.id}}">View Post</a> |
 
-                        {% if user.id == recipe.user.id: %}
-                        <a href="/recipes/edit/{{recipe.id}}">Edit</a> | 
-                        <a href="/recipes/delete/{{recipe.id}}">Delete</a>
+                        {% if user.id == post.user.id: %}
+                        <a href="/posts/edit/{{post.id}}">Edit</a> | 
+                        <a href="/posts/delete/{{post.id}}">Delete</a>
                         {% endif %}
                         
                     </td>
@@ -60,7 +65,7 @@
 
             <div class="card-footer text-white">
             </div>
-        </div> -->
+        </div>
     </main>
 
         <footer>

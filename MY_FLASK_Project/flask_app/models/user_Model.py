@@ -5,7 +5,7 @@ from flask import flash
 
 class User:
 #---START---DONE
-    DB = "recipe_schema"
+    DB = "bug_box_schema"
     def __init__(self, data):
         self.id = data["id"]
         self.first_name = data["first_name"]
