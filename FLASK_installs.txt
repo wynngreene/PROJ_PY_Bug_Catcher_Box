@@ -1,0 +1,21 @@
+01. new_project_folder $ pipenv install flask
+02. new_project_folder $ pipenv install PyMySQL flask
+03. new_project_folder $ pipenv install flask-bcrypt
+
+04. new_project_folder $ pipenv shell
+04. new_project_folder $ pipenv list 
+
+05. new_project_folder $ python3 server.py
+
+35 Location: Mountain Village - (Snowhead Temple Cleared), Clock Town Laundry Pool, Southern Swamp, Woodfall Temple, Great Bay Temple
+
+Requires: Don Gero's Mask, Hero's Bow, Ice Arrows, Snowhead Temple Cleared
+
+Re-unite the frogs at Mountain Village, the first frog will be waiting there after you have finished the 2nd Temple, talk to it while wearing Don Gero's Mask, do so with the other 4 frogs that are located at
+
+The Laundry Pool at Clock Town
+On a log at the Southern Swamp where you head to the Deku Palace in the non-poisonous area of the water
+At the Woodfall Temple, defeat the Mini-Boss Gekko
+At the Great Bay Temple, defeat the Mini-Boss Gekko.
+
+Afterwards go to Mountain Village (ONLY DURING SPRING) and talk with the frogs while wearing Don Gero's Mask to get this Piece Of Heart.
