@@ -33,21 +33,17 @@
             </div>
             <table class="table card-body table-striped table-hover">
                 <tr>
-                    <th>USER NAME</th>
-                    <th>UNDER 30 MIN</th>
-                    <th>POSTED BY</th>
+                    <th>TITLE</th>
+                    <th>Desc</th>
+                    <th>Link</th>
                     <th>ACTIONS</th>
                 </tr>
                 {% for post in posts %}
                 <tr>
                 
-                    <td>{{post.name}} <span class="badge badge-primary text-primary">New</span></td>
+                    <td>{{post.title}} <span class="badge badge-primary text-primary">New</span></td>
                     <td>
-                        {% if post.under_30: %}
-                        Yes
-                        {% else %}
-                        No
-                        {% endif %}
+                        {{post.link}}
                     </td>
                     <td>{{post.user.first_name}}</td>
                     <td>

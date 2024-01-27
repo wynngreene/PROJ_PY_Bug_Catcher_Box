@@ -20,7 +20,7 @@ def dashboard():
         "id" : session["user_id"]
     }
 
-    print("I got my 03 LIST of", data)
+    print("I got my 03 LOGIN of", data)
     return render_template("home.html", user=User.get_by_id(data))
 
 ######## GET ROUTES ########

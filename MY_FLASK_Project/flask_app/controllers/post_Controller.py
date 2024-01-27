@@ -1,8 +1,7 @@
 from flask import render_template, redirect, session, request, flash
 from flask_app import app
-from flask_app.models.post_Model import Post
 from flask_app.models.user_Model import User
-
+from flask_app.models.post_Model import Post
 from flask import flash
 
 ######## BLEND ROUTES ########
@@ -15,9 +14,9 @@ def posts_home():
     data = {
         "id" : session["user_id"]
     }
-    print("My 01 list of REC!")
+    print("My 01 list of IDS!")
     posts = Post.get_all()
-    print("My 02 list of REC!")
+    print("My 02 list of POST!")
 
     user=User.get_by_id(data)
 
@@ -35,8 +34,9 @@ def post_details(post_id):
 # 03 ROUTES | Render Page with Create Form
 @app.route("/posts/new")
 def create_page():
+    print("Where is my Create page? ")
     user = session["user_id"]
-    
+
     return render_template("post_create.html", user=user)
 
 # 04 ROUTES | Render Page with Edit Form 
@@ -68,13 +68,12 @@ def post_create():
     
     return redirect("posts/new")
 
-
-# # 07 ROUTES | UPDATE (Process form)
-# @app.route("/posts/update", methods=["POST"])
-# def update_post():
-#     is_valid = Post.is_valid(request.form)
-#     if is_valid:
-#         Post.update_post(request.form)
-#         return redirect("/dashboard_02")
+# 07 ROUTES | UPDATE (Process form)
+@app.route("/posts/update", methods=["POST"])
+def update_post():
+    is_valid = Post.is_valid(request.form)
+    if is_valid:
+        Post.update_post(request.form)
+        return redirect("/dashboard_02")
         
-#     return redirect(f"/posts/edit/{request.form["id"]}")
+    return redirect(f"/posts/edit/{request.form["id"]}")
