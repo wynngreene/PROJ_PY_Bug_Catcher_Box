@@ -64,6 +64,7 @@ def post_create():
     is_valid = Post.is_valid(request.form)
     if is_valid:
         Post.save(request.form)
+        print(request.form)
         return redirect("/dashboard_02")
     
     return redirect("posts/new")
