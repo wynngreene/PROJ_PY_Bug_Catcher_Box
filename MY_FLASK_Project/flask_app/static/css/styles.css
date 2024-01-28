@@ -18,3 +18,8 @@ main {
 table {
     margin-bottom: 0 !important;
 }
+
+img {
+    height: 200px;
+    width: 200px;
+}

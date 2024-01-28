@@ -14,14 +14,17 @@ def posts_home():
     data = {
         "id" : session["user_id"]
     }
-    
-    print("01- My list of IDS!")
     posts = Post.get_all()
-    print("02- My list of POST!", posts)
-
     user=User.get_by_id(data)
 
-    return render_template("home.html", user=user, posts=posts)
+    ### GALLERY ###
+    image_urls = [
+        "https://example.com/image1.jpg",
+        "https://example.com/image2.jpg",
+        "https://example.com/image3.jpg",
+    ] 
+
+    return render_template("home.html", user=user, posts=posts, image_urls=image_urls)
 
 ######## GET ROUTES ########
 

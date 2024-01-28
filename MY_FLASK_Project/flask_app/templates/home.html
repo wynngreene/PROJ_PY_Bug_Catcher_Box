@@ -23,7 +23,16 @@
             Welcome {{user.first_name}} {{user.last_name}}
         </h2>
         <br>
-        <div class="gallery">
+        <div class="gallery ">
+            <h2>Image Display</h2>
+            <div class="row">
+                {% for post in posts %}
+                <div class="text-center col-md-3">
+                    <img src="{{ post.link }}" alt="Image" class="img-thumbnail img-responsive mx-auto d-block ">
+                    <p>{{post.title}} </p>
+                </div>
+                {% endfor %}
+            </div>
         </div>
         <br>
         <div class="card bg-dark">
