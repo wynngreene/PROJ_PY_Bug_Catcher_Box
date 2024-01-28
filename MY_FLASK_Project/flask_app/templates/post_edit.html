@@ -37,8 +37,8 @@
                         <form action="/posts/update" method="post">
 
                             <tr class="form-group">
-                                <th><label for="name">Name:</label></th>
-                                <td><input class="form-control" type="text" name="name" value="{{post.name}}"></td>
+                                <th><label for="title">Name:</label></th>
+                                <td><input class="form-control" type="text" name="title" value="{{post.title}}"></td>
                             </tr>
                             <tr class="form-group">
                                 <th><label for="Description">Description:</label></th>
@@ -46,24 +46,7 @@
                             </tr>
                             <tr class="form-group">
                                 <th><label for="Instructions">Instructions:</label></th>
-                                <td><textarea class="form-control" rows="3" type="text"  name="instructions">{{post.instructions}}</textarea></td>
-                            </tr>
-                            <tr class="form-group">
-                                <th><label for="date_made">Date Cooked / Made:</label></th>
-                                <td>
-                                    <input type="date" name="date_made" value="{{post.date_made}}">
-                                </td>
-                            </tr>
-                            <tr class="form-group">
-                                <th><label for="name">Under 30 Minutes?</label></th>
-                                <td colspan="2">
-                                    <div class="d-flex">
-                                        <input type="radio" name="under_30" value="1">
-                                        <label for="yes">Yes</label>
-                                        <input type="radio"  name="under_30" value="0">
-                                        <label for="no">No</label>
-                                    </div>
-                                </td>
+                                <td><textarea class="form-control" rows="3" type="text"  name="link">{{post.link}}</textarea></td>
                             </tr>
                             <tr>
                                 <td colspan="4">

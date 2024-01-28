@@ -14,9 +14,10 @@ def posts_home():
     data = {
         "id" : session["user_id"]
     }
-    print("My 01 list of IDS!")
+    
+    print("01- My list of IDS!")
     posts = Post.get_all()
-    print("My 02 list of POST!")
+    print("02- My list of POST!", posts)
 
     user=User.get_by_id(data)
 

@@ -12,19 +12,17 @@ def index():
     return render_template("index.html")
 
 # 01 ROUTES | DASHBOARD 
-@app.route("/dashboard_02")
-def dashboard():
-    if "user_id" not in session:
-        return redirect("/logout")
-    data = {
-        "id" : session["user_id"]
-    }
+# @app.route("/dashboard_02")
+# def dashboard():
+#     if "user_id" not in session:
+#         return redirect("/logout")
+#     data = {
+#         "id" : session["user_id"]
+#     }
 
-    print("I got my 03 LOGIN of", data)
-    return render_template("home.html", user=User.get_by_id(data))
+#     return render_template("home.html", user=User.get_by_id(data))
 
 ######## GET ROUTES ########
-
 
 # 00 ROUTES | LOGOUT
 @app.route("/logout")
