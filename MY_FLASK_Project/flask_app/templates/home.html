@@ -23,19 +23,29 @@
             Welcome {{user.first_name}} {{user.last_name}}
         </h2>
         <br>
-        <div class="gallery ">
-            <h2>Image Display</h2>
+        <div class="gallery">
+            <div class="d-flex justify-content-between">
+                <h2>Image Display</h2>
+                <a href="/posts/new" class="btn btn-warning">(+) Create New</a> 
+            </div>
             <div class="row">
                 {% for post in posts %}
-                <div class="text-center col-md-3">
-                    <img src="{{ post.link }}" alt="Image" class="img-thumbnail img-responsive mx-auto d-block ">
-                    <p>{{post.title}} </p>
+                <div class="image_card text-center col-md-3 card">
+                    <p class="card-header">{{post.title}} </p>
+                    <img src="{{ post.link }}" alt="Image" class="thumbnail img-responsive mx-auto card-body">
+                    <div class="card-footer">
+                        <a href="/posts/{{post.id}}">View</a>
+                    {% if user.id == post.user.id: %}
+                        | <a href="/posts/edit/{{post.id}}">Edit</a> | 
+                        <a href="/posts/delete/{{post.id}}">Delete</a>
+                    {% endif %}
+                    </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
         <br>
-        <div class="card bg-dark">
+        <!-- <div class="card bg-dark">
             <div class="card-header text-white d-flex justify-content-between">
                 <h4>All Posts</h4>
                 <a href="/posts/new" class="btn btn-warning">(+) Create New</a> 
@@ -56,7 +66,7 @@
                     </td>
                     <td>{{post.user.first_name}}</td>
                     <td>
-                        <a href="/posts/{{post.id}}">View Post</a> |
+                        <a href="/posts/{{post.id}}">View</a> |
 
                         {% if user.id == post.user.id: %}
                         <a href="/posts/edit/{{post.id}}">Edit</a> | 
@@ -67,9 +77,9 @@
                 </tr>
                 {% endfor %}
             </table>
-
             <div class="card-footer text-white">
-            </div>
+            </div> -->
+            
         </div>
     </main>
 
