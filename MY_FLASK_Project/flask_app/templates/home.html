@@ -23,6 +23,30 @@
             Welcome {{user.first_name}} {{user.last_name}}
         </h2>
         <br>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="images/20230830_144728.jpg" alt="Lights" style="width:100%">
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="images/20230830_144728.jpg" alt="Lights" style="width:100%">
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="images/20230830_144728.jpg" alt="Lights" style="width:100%">
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
         <div class="gallery">
             <div class="d-flex justify-content-between">
                 <h2>Image Display</h2>
@@ -32,7 +56,7 @@
                 {% for post in posts %}
                 <div class="image_card text-center col-md-3 card">
                     <p class="card-header">{{post.title}} </p>
-                    <img src="{{ post.link }}" alt="Image" class="thumbnail img-responsive mx-auto card-body">
+                    <img src="/images/20230830_144728.jpg" alt="{{ post.link }}" class="thumbnail img-responsive mx-auto card-body">
                     <div class="card-footer">
                         <a href="/posts/{{post.id}}">View</a>
                     {% if user.id == post.user.id: %}
