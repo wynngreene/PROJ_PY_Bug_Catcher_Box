@@ -2,10 +2,17 @@
 <html lang="en">
 <header class="my-border-color mw-100 p-3">
     {% block menu %}
-    <div class="container d-flex justify-content-end">
-        <a href="/dashboard_02" >Dashboard</a>
-        <a href="/" >Logout</a>
+    <div class="d-flex justify-content-between">
+        <div class="d-flex align-self-center">
+            <img src="img_girl.jpg" alt="Girl in a jacket" class="">
+            <h2>Bug Catcher's Box</h2>
+        </div>
+        <div class=" d-flex">
+            <a href="/dashboard_02" class="btn btn-warning btn-lg active" role="button" aria-pressed="true" style="margin-right:.5em;">Dashboard</a>   
+            <a href="/" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Logout</a>
+        </div>
     </div>
+
     {% endblock menu %}
 </header>
 </html>

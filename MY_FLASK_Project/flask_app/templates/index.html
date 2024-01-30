@@ -12,14 +12,18 @@
     
     <body class="my-bg-color">
         <header>
+            <nav class="d-flex center">
+                <img src="img_girl.jpg" alt="Girl in a jacket" class="">
+                <h2>Bug Catcher's Box</h2>
+            </nav>
+        </header>
+        <!-- <header>
             <nav>
                 {% block menu %} {% include 'menu.html' %} {% endblock menu %}
             </nav>
-        </header>
+        </header> -->
 
         <main class="container">
-            <br>
-            <h2>BUG Catcher's BOX | Login</h2>
             <br>
             <div class="justify-content-center row">
                 <div class="col-sm-4 card text-white bg-dark" style="margin-right: 3em;">
@@ -92,7 +96,7 @@
                 </div>
             </div>
         </main>
-
+        <br>
         <footer>
             {% block footer %} {% include 'footer.html' %} {% endblock footer %}
         </footer>

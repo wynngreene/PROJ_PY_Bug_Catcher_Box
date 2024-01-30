@@ -1,14 +1,58 @@
+/* * {
+    border: red 1px dotted;
+} */
 
-.my-bg-color {
+/* .my-bg-color {
     background-color: greenyellow;
-}
+} */
 
 .my-border-color {
-    background-color: #332D2D;
+    background-color: #9b4534;
 }
 
 .my-card-color {
-    background-color: #332D2D;
+    background-color: #D06F4C;
+}
+
+
+.center {
+    text-align: center;
+}
+
+/* LINKS */
+a {
+    color: white;
+}
+a:link {
+    color: red;
+    text-decoration: none;
+}
+/* a:visited {
+    color: green;
+    text-decoration: none;
+} */
+a:hover {
+    color: white;
+
+}
+
+body {
+    /* Set the background image */
+    box-shadow: 0px 0px 32px -2px rgb(0, 0, 0) inset;
+    -webkit-box-shadow: 0px 0px 32px -2px rgba(0, 0, 0) inset;
+    -moz-box-shadow: 10px 0px 32px -2px rgba(0, 0, 0) inset;
+    
+    background-image: url('/static/images/texture_vector_wood_lighter.jpg');
+    position: relative;
+    
+    /* Set background size and other properties as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Set default margin and padding to 0 */
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -19,12 +63,9 @@ table {
     margin-bottom: 0 !important;
 }
 
-img {
-    height: 200px;
-    width: 200px;
-}
-
-.image_card {
+/*/////////// GALLERY ///////////////*/
+.gallery_image {
+    background-color: #332D2D;
     margin-left: 1em;
     margin-bottom: 1em;
 }

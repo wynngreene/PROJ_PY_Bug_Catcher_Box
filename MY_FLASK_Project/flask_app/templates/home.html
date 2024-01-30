@@ -24,22 +24,22 @@
         </h2>
         <br>
 
-        <div class="row">
+        <div class="row container">
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="images/20230830_144728.jpg" alt="Lights" style="width:100%">
+                    <img src="{{ url_for('static', filename='images/image_promo_0001.jpg') }}" alt="Lights" style="width:100%">
                     <p>Lorem ipsum...</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="images/20230830_144728.jpg" alt="Lights" style="width:100%">
+                    <img src="{{ url_for('static', filename='images/image_promo_0002.jpg') }}" alt="Lights" style="width:100%">
                     <p>Lorem ipsum...</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="images/20230830_144728.jpg" alt="Lights" style="width:100%">
+                    <img src="{{ url_for('static', filename='images/image_promo_0003.jpg') }}" alt="Lights" style="width:100%">
                     <p>Lorem ipsum...</p>
                 </div>
             </div>
@@ -47,66 +47,36 @@
 
         <br>
 
-        <div class="gallery">
+        <div class="banner_gallery ">
             <div class="d-flex justify-content-between">
                 <h2>Image Display</h2>
-                <a href="/posts/new" class="btn btn-warning">(+) Create New</a> 
+                <a href="/posts/new" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">(+) Create New</a> 
             </div>
-            <div class="row">
-                {% for post in posts %}
-                <div class="image_card text-center col-md-3 card">
-                    <p class="card-header">{{post.title}} </p>
-                    <img src="/images/20230830_144728.jpg" alt="{{ post.link }}" class="thumbnail img-responsive mx-auto card-body">
-                    <div class="card-footer">
-                        <a href="/posts/{{post.id}}">View</a>
-                    {% if user.id == post.user.id: %}
-                        | <a href="/posts/edit/{{post.id}}">Edit</a> | 
-                        <a href="/posts/delete/{{post.id}}">Delete</a>
-                    {% endif %}
+            <div class="center">
+                    <div class="d-flex flex-wrap">
+                    {% for post in posts %}
+                    <div class="gallery_image col-md-3 rounded">
+                        <a href="/posts/{{post.id}}">
+                            <img src="{{ url_for('static', filename='images/image_insects_0001.jpg') }}" alt="{{ post.link }}" class="shadow-1-strong w-100">
+                            <div class="">
+                                <a href="/posts/{{post.id}}">View</a>
+                            {% if user.id == post.user.id: %}
+                                | <a href="/posts/edit/{{post.id}}">Edit</a> | 
+                                <a href="/posts/delete/{{post.id}}">Delete</a>
+                            {% endif %}
+                            </div>
+                        </a>
+                        
                     </div>
+                    {% endfor %}
+                        
                 </div>
-                {% endfor %}
+                
             </div>
         </div>
         <br>
-        <!-- <div class="card bg-dark">
-            <div class="card-header text-white d-flex justify-content-between">
-                <h4>All Posts</h4>
-                <a href="/posts/new" class="btn btn-warning">(+) Create New</a> 
-            </div>
-            <table class="table card-body table-striped table-hover">
-                <tr>
-                    <th>TITLE</th>
-                    <th>Desc</th>
-                    <th>Link</th>
-                    <th>ACTIONS</th>
-                </tr>
-                {% for post in posts %}
-                <tr>
-                
-                    <td>{{post.title}} <span class="badge badge-primary text-primary">New</span></td>
-                    <td>
-                        {{post.link}}
-                    </td>
-                    <td>{{post.user.first_name}}</td>
-                    <td>
-                        <a href="/posts/{{post.id}}">View</a> |
-
-                        {% if user.id == post.user.id: %}
-                        <a href="/posts/edit/{{post.id}}">Edit</a> | 
-                        <a href="/posts/delete/{{post.id}}">Delete</a>
-                        {% endif %}
-                        
-                    </td>
-                </tr>
-                {% endfor %}
-            </table>
-            <div class="card-footer text-white">
-            </div> -->
-            
         </div>
     </main>
-
         <footer>
             {% block footer %} {% include 'footer.html' %} {% endblock footer %}
         </footer>
