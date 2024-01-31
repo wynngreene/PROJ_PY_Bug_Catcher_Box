@@ -4,8 +4,8 @@
     {% block menu %}
     <div class="d-flex justify-content-between">
         <div class="d-flex align-self-center">
-            <img src="img_girl.jpg" alt="Girl in a jacket" class="">
-            <h2>Bug Catcher's Box</h2>
+            <img src="{{ url_for('static', filename='images/image_logo_sml.jpg') }}" alt="logo" style="width:50px; margin-right: 1em;" class="rounded">
+            <h2 class="text-white">Bug Catcher's Box</h2>
         </div>
         <div class=" d-flex">
             <a href="/dashboard_02" class="btn btn-warning btn-lg active" role="button" aria-pressed="true" style="margin-right:.5em;">Dashboard</a>   

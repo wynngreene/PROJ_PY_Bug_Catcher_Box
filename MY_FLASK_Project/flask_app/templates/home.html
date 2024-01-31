@@ -27,17 +27,17 @@
         <div class="row container">
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="{{ url_for('static', filename='images/image_promo_0001.jpg') }}" alt="Lights" style="width:100%" class="rounded" >
+                    <img src="{{ url_for('static', filename='images/image_promo_0001.jpg') }}" alt="Lights" style="width:100%; margin-bottom: 1em;" class="rounded" >
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="{{ url_for('static', filename='images/image_promo_0002.jpg') }}" alt="Lights" style="width:100%" class="rounded" >
+                    <img src="{{ url_for('static', filename='images/image_promo_0002.jpg') }}" alt="Lights" style="width:100%; margin-bottom: 1em;" class="rounded" >
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="{{ url_for('static', filename='images/image_promo_0003.jpg') }}" alt="Lights" style="width:100%" class="rounded" >
+                    <img src="{{ url_for('static', filename='images/image_promo_0003.jpg') }}" alt="Lights" style="width:100%; margin-bottom: 1em;" class="rounded" >
                 </div>
             </div>
         </div>
@@ -46,16 +46,18 @@
 
         <div class="banner_gallery ">
             <div class="d-flex justify-content-between">
-                <h2>Image Display</h2>
+                <h2>Bug Gallery</h2>
                 <a href="/posts/new" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">(+) Create New</a> 
             </div>
             <div class="center">
                     <div class="d-flex flex-wrap">
                     {% for post in posts %}
                     <div class="gallery_image col-md-3 rounded">
-                        <div class="bg-dark text-white rounded p-1">{{post.title}}</div>
+                        <div class="bg-dark text-white rounded p-1">
+                        <p>{{post.title}} | by: {{post.user.first_name}}</p>
+                        </div>
                         <a href="/posts/{{post.id}}">
-                            <img src="{{ url_for('static', filename='images/image_insects_0001.jpg') }}" alt="{{ post.link }}" class="shadow-1-strong w-100">
+                            <img src="{{ url_for('static', filename='images/image_insects_0004.jpg') }}" alt="{{ post.link }}" class="shadow-1-strong w-100">
                             <div class="text-white p-1">
                                 <a href="/posts/{{post.id}}">View</a>
                             {% if user.id == post.user.id: %}
@@ -72,9 +74,8 @@
                 
             </div>
         </div>
-        <br>
-        </div>
     </main>
+        <br>
         <footer>
             {% block footer %} {% include 'footer.html' %} {% endblock footer %}
         </footer>
