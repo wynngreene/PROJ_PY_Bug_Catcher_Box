@@ -20,29 +20,28 @@
         <main class="container w-75">
             <br>
             <div class="">
-                <div class="user_profile_display d-flex">
-                    <img src="{{ url_for('static', filename='images/image_profile_400x400.jpeg') }}" alt="{{ post.link }}" width="100px">
+                <div class="user_profile_display d-flex justify-content-center">
+                    <img src="{{ url_for('static', filename='images/image_profile_400x400.jpeg') }}" alt="{{ post.link }}" width="100px" class="rounded" style="margin-right: 1em; margin-bottom: 1em;">
                     <div>
                         <h4>Posted by: {{post.user.first_name}} {{post.user.last_name}}</h4>
                         <h4>Email : {{post.user.email}}</h4>
                     </div>
                 </div>
 
-                <table class="card">
-                    <tr class="card-header">
+                <div class="card">
+                    <div class="card-header text-white bg-dark">
                         <h4>{{post.title}}</h4>
-                    </tr>
+                    </div>
 
-                    <tr class="card-body">
+                    <div class="card-body text-white bg-dark">
                         <img src="{{ url_for('static', filename='images/image_insects_0003.jpg') }}" alt="{{ post.link }}" class="shadow-1-strong w-100">
-                    </tr>
+                    </div>
 
-                    <tr class="card-footer">
-                        <td>Link:{{post.link}}</td>
-                        <td>Description:{{post.description}}</td>
-                    </tr>
-
-                </table>
+                    <div class="card-footer text-white bg-dark">
+                        <div>Link:{{post.link}}</div>
+                        <div>Description:{{post.description}}</div>
+                    </div>
+                </div>
             </div>
         
         </main>
